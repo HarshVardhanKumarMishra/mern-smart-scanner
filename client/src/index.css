@@ -2,7 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Optional: Smooth dark background for the whole body */
-body {
-  @apply bg-dark-900 text-gray-100 font-sans antialiased;
+@layer base {
+  body {
+    @apply bg-dark-900 text-gray-100 font-sans antialiased;
+  }
+
+  input {
+    @apply bg-dark-800 text-white border border-gray-700 rounded-md p-3 focus:ring-2 focus:ring-brand-500 focus:outline-none transition-all;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #1e1e1e inset !important;
+  -webkit-text-fill-color: white !important;
+  caret-color: white !important;
 }
