@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: Smooth dark background for the whole body */
+body {
+  @apply bg-dark-900 text-gray-100 font-sans antialiased;
+}
