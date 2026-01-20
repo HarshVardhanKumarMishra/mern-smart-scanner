@@ -1,3 +1,4 @@
+const fs = require('fs');
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
@@ -20,7 +21,14 @@ app.use(express.json());
 app.use('/api/health', healthRoutes); 
 app.use('/api/auth', authRoutes);  
 app.use('/api/documents', documentRoutes);
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));   
+const uploadDir = path.join(__dirname, 'uploads');
+
+if (!fs.existsSync(uploadDir)){
+    fs.mkdirSync(uploadDir, { recursive: true });
+    console.log("Created missing uploads directory"); 
+}
+
+app.use('/uploads', express.static(uploadDir));  
 
 app.get('/', (req, res) => {
   res.send('API is running...');

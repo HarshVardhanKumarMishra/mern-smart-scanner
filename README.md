@@ -104,3 +104,6 @@ No paid services or closed-source APIs are used in any part of the application.
 * Additional image enhancement steps (adaptive thresholding, shadow removal) could further improve scan quality.
 
 These trade-offs were made to keep the solution simple, transparent, and within the scope of the assignment.
+
+## Note: 
+This project uses local disk storage for simplicity. On the free hosting tier (Render), files are ephemeral and will disappear when the instance restarts. For a production app, I would use AWS S3 or Cloudinary for persistent storage.
