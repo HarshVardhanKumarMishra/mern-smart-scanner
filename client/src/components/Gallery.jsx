@@ -55,7 +55,7 @@ const Gallery = ({ refreshTrigger }) => {
                 
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
                    <a 
-                     href={`http://localhost:3000/uploads/${doc.croppedFile}`} 
+                     href={`${import.meta.env.VITE_API_URL}/uploads/${doc.croppedFile}`} 
                      target="_blank" 
                      rel="noreferrer"
                      className="px-4 py-2 bg-white text-black rounded-full text-sm font-bold shadow-lg hover:bg-gray-200"
