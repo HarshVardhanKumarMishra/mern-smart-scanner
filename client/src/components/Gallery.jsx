@@ -14,7 +14,7 @@ const Gallery = ({ refreshTrigger }) => {
         headers: { Authorization: `Bearer ${token}` },
       };
 
-      const { data } = await axios.get("http://localhost:3000/api/documents", config);
+      const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/documents`, config);
       setDocuments(data);
       setLoading(false);
     } catch (error) {
@@ -48,7 +48,7 @@ const Gallery = ({ refreshTrigger }) => {
               
               <div className="relative h-48 overflow-hidden bg-gray-900">
                 <img 
-                  src={`http://localhost:3000/uploads/${doc.croppedFile}`} 
+                  src={`${import.meta.env.VITE_API_URL}/uploads/${doc.croppedFile}`} 
                   alt="Scanned" 
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" 
                 />

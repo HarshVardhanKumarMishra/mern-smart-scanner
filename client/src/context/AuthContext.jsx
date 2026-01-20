@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const config = { headers: { "Content-Type": "application/json" } };
       const { data } = await axios.post(
-        "http://localhost:3000/api/auth/register",
+        `${import.meta.env.VITE_API_URL}/api/auth/register`,
         { name, email, password },
         config
       );
@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const config = { headers: { "Content-Type": "application/json" } };
       const { data } = await axios.post(
-        "http://localhost:3000/api/auth/login",
+        `${import.meta.env.VITE_API_URL}/api/auth/login`,
         { email, password },
         config
       );

@@ -118,7 +118,7 @@ const Scanner = ({ onScanComplete }) => {
                 };
 
                 // 3. Send to Server
-                await axios.post("http://localhost:3000/api/documents/upload", formData, config);
+                await axios.post(`${import.meta.env.VITE_API_URL}/api/documents/upload`, formData, config);
 
                 setStatus("Saved to Gallery!");
                 setSaving(false);
